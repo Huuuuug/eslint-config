@@ -1,0 +1,4 @@
+packages: []
+
+catalog:
+  "@eslint/js": ^9.21.0

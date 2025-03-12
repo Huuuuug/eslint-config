@@ -1,0 +1,15 @@
+{
+  "name": "@ganfu/eslint-config",
+  "version": "1.0.0",
+  "packageManager": "pnpm@9.15.1",
+  "description": "ESLint config for ganfu",
+  "type": "module",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@eslint/js": "catalog:"
+  }
+}
