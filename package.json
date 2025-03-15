@@ -1,15 +1,30 @@
 {
-  "name": "@ganfu/eslint-config",
+  "name": "@huuuuug/eslint-config",
   "version": "1.0.0",
   "packageManager": "pnpm@9.15.1",
-  "description": "ESLint config for ganfu",
+  "description": "ESLint config for huuuuug",
   "type": "module",
   "license": "MIT",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "build:typegen": "tsx scripts/typegen.ts"
+  },
+  "peerDependencies": {
+    "eslint": "catalog:peer"
   },
   "dependencies": {
-    "@eslint/js": "catalog:"
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "eslint-config-flat-gitignore": "catalog:prod",
+    "eslint-flat-config-utils": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:dev",
+    "eslint-typegen": "catalog:dev",
+    "jiti": "^2.4.2",
+    "tsx": "catalog:dev",
+    "typescript": "^5.8.2"
   }
 }

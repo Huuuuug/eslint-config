@@ -1,4 +1,14 @@
 packages: []
 
-catalog:
-  "@eslint/js": ^9.21.0
+overrides:
+  eslint: ^9.22.0
+
+catalogs:
+  dev:
+    tsx: ^4.19.3
+    "@types/node": ^22.13.10
+    eslint-typegen: ^2.0.0
+  prod:
+    eslint-config-flat-gitignore: ^2.1.0
+  peer:
+    eslint: ^9.22.0
