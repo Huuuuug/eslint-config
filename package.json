@@ -15,10 +15,12 @@
     "eslint": "catalog:peer"
   },
   "dependencies": {
+    "@stylistic/eslint-plugin": "^4.2.0",
     "@typescript-eslint/eslint-plugin": "^8.26.1",
     "@typescript-eslint/parser": "^8.26.1",
     "eslint-config-flat-gitignore": "catalog:prod",
-    "eslint-flat-config-utils": "^2.0.1"
+    "eslint-flat-config-utils": "^2.0.1",
+    "globals": "^16.0.0"
   },
   "devDependencies": {
     "@types/node": "catalog:dev",

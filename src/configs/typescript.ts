@@ -1,23 +1,23 @@
-import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
-import tsEslintParser from '@typescript-eslint/parser';
-import { GLOB_TS, GLOB_TSX } from '../globs';
+import tsEslintPlugin from '@typescript-eslint/eslint-plugin'
+import tsEslintParser from '@typescript-eslint/parser'
+import { GLOB_TS, GLOB_TSX } from '../globs'
 import {
   OptionsComponentExts,
   OptionsFiles,
   OptionsOverrides,
   TypedFlatConfigItem,
-} from 'src/types';
+} from 'src/types'
 
 export async function typescript(
-  options: OptionsFiles & OptionsComponentExts & OptionsOverrides = {}
+  options: OptionsFiles & OptionsComponentExts & OptionsOverrides = {},
 ): Promise<TypedFlatConfigItem[]> {
-  const { componentExts = [], overrides } = options;
+  const { componentExts = [] } = options
 
   const files = options.files ?? [
     GLOB_TS,
     GLOB_TSX,
-    ...componentExts.map((ext) => `**/*.${ext}`),
-  ];
+    ...componentExts.map(ext => `**/*.${ext}`),
+  ]
 
   return [
     {
@@ -36,12 +36,12 @@ export async function typescript(
       files,
       name: 'huuuuug/typescript/rules',
       rules: {
-        ...tsEslintPlugin.configs['eslint-recommended'].overrides![0].rules!,
+        ...tsEslintPlugin.configs['recommended'].rules,
         ...tsEslintPlugin.configs['strict'].rules,
         '@typescript-eslint/no-explicit-any': 'off',
         'dot-notation': 'off',
-        'no-console': ['error', {allow: ['warn', 'error']}]
+        'no-console': ['error', { allow: ['warn', 'error'] }],
       },
     },
-  ];
+  ]
 }

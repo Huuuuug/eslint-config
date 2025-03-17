@@ -1,14 +1,14 @@
-import { FlatConfigComposer } from 'eslint-flat-config-utils';
+import { FlatConfigComposer } from 'eslint-flat-config-utils'
 
-import { typescript } from './configs';
+import { typescript, stylistic } from './configs'
 
-import type { Linter } from 'eslint';
+import type { Linter } from 'eslint'
 import type {
   Awaitable,
   ConfigNames,
   OptionsConfig,
   TypedFlatConfigItem,
-} from './types';
+} from './types'
 
 export function huuuuug(
   options: OptionsConfig & Omit<TypedFlatConfigItem, 'files'> = {},
@@ -19,16 +19,18 @@ export function huuuuug(
     | Linter.Config[]
   >[]
 ): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
-  const { typescript: enableTypescript } = options;
+  const { typescript: enableTypescript } = options
 
-  const configs: Awaitable<TypedFlatConfigItem[]>[] = [];
+  const configs: Awaitable<TypedFlatConfigItem[]>[] = []
+
+  configs.push(stylistic())
 
   if (enableTypescript) {
-    configs.push(typescript());
+    configs.push(typescript())
   }
 
-  const composer = new FlatConfigComposer<TypedFlatConfigItem, ConfigNames>();
+  const composer = new FlatConfigComposer<TypedFlatConfigItem, ConfigNames>()
 
-  composer.append(...configs, ...(userConfigs as any));
-  return composer;
+  composer.append(...configs, ...(userConfigs as any))
+  return composer
 }

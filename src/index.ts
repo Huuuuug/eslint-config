@@ -1,7 +1,6 @@
-import { huuuuug } from './factory';
+import { huuuuug } from './factory'
 
-export * from "./factory";
-export * from './configs';
+export * from './factory'
+export * from './configs'
 
-
-export default huuuuug;
+export default huuuuug

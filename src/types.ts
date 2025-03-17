@@ -1,15 +1,15 @@
-import type { Linter } from 'eslint';
-import type { Rules, ConfigNames } from './typegen';
-import { FlatGitignoreOptions } from 'eslint-config-flat-gitignore';
-import { ParserOptions } from '@typescript-eslint/parser';
+import type { Linter } from 'eslint'
+import type { Rules, ConfigNames } from './typegen'
+import { FlatGitignoreOptions } from 'eslint-config-flat-gitignore'
+import { ParserOptions } from '@typescript-eslint/parser'
 
-export type Awaitable<T> = T | Promise<T>;
+export type Awaitable<T> = T | Promise<T>
 
-export type { Rules, ConfigNames };
+export type { Rules, ConfigNames }
 
 export type OptionsTypescript =
   | (OptionsTypescriptWithTypes & OptionsOverrides)
-  | (OptionsTypescriptParserOptions & OptionsOverrides);
+  | (OptionsTypescriptParserOptions & OptionsOverrides)
 
 export type TypedFlatConfigItem = Omit<
   Linter.Config<Linter.RulesRecord & Rules>,
@@ -21,14 +21,14 @@ export type TypedFlatConfigItem = Omit<
    * When `files` is specified, these plugins are only available to the matching files.
    *
    */
-  plugins?: Record<string, any>;
-};
+  plugins?: Record<string, any>
+}
 
 export interface OptionsFiles {
   /**
    * Override the `files` option to provide custom globs.
    */
-  files?: string[];
+  files?: string[]
 }
 
 export interface OptionsComponentExts {
@@ -38,11 +38,11 @@ export interface OptionsComponentExts {
    * @example ['vue']
    * @default []
    */
-  componentExts?: string[];
+  componentExts?: string[]
 }
 
 export interface OptionsOverrides {
-  overrides?: TypedFlatConfigItem['rules'];
+  overrides?: TypedFlatConfigItem['rules']
 }
 
 export interface OptionsProjectType {
@@ -51,7 +51,7 @@ export interface OptionsProjectType {
    *
    * @default 'app'
    */
-  type?: 'app' | 'lib';
+  type?: 'app' | 'lib'
 }
 
 export interface OptionsTypescriptWithTypes {
@@ -59,40 +59,40 @@ export interface OptionsTypescriptWithTypes {
    * When this options is provided, type aware rules will be enabled.
    * @see https://typescript-eslint.io/linting/typed-linting
    */
-  tsconfigPath?: string;
+  tsconfigPath?: string
 
   /**
    * Override the `files` option to provide custom rules.
    */
-  overridesTypeAware?: TypedFlatConfigItem['rules'];
+  overridesTypeAware?: TypedFlatConfigItem['rules']
 }
 
 export interface OptionsTypescriptParserOptions {
   /**
    * Additional parser options for TypeScript.
    */
-  parseOptions?: Partial<ParserOptions>;
+  parseOptions?: Partial<ParserOptions>
 
   /**
    * Glob patterns for files that should be type aware.
    * @default ['**\/*.{ts,tsx}']
    */
-  filesTypeAware?: string[];
+  filesTypeAware?: string[]
 
   /**
    * Glob patterns for files that should not be type aware.
    * @default ['**\/*.md\/**', '**\/*.astro/*.ts']
    */
-  ignoresTypeAware?: string[];
+  ignoresTypeAware?: string[]
 }
 
 export interface OptionsOverrides {
-  overrides?: TypedFlatConfigItem['rules'];
+  overrides?: TypedFlatConfigItem['rules']
 }
 
 export interface OptionsConfig
   extends OptionsComponentExts,
-    OptionsProjectType {
+  OptionsProjectType {
   /**
    * Enable gitignore support.
    *
@@ -101,7 +101,11 @@ export interface OptionsConfig
    * @see https://github.com/antfu/eslint-config-flat-gitignore
    * @default true
    */
-  gitignore?: boolean | FlatGitignoreOptions;
+  gitignore?: boolean | FlatGitignoreOptions
 
-  typescript?: boolean | OptionsTypescript;
+  typescript?: boolean | OptionsTypescript
+}
+
+export interface OptionsIsInEditor {
+  isInEditor?: boolean
 }
