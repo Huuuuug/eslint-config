@@ -1,6 +1,6 @@
 import { FlatConfigComposer } from 'eslint-flat-config-utils'
 
-import { typescript, stylistic, ignores } from './configs'
+import { javascript, typescript, stylistic, ignores } from './configs'
 
 import type { Linter } from 'eslint'
 import type {
@@ -24,7 +24,7 @@ export function ganghu(
   // Base Configs
   const configs: Awaitable<TypedFlatConfigItem[]>[] = []
 
-  configs.push(ignores(options.ignores), stylistic())
+  configs.push(ignores(options.ignores), stylistic(), javascript())
 
   if (enableTypescript) {
     configs.push(typescript())
