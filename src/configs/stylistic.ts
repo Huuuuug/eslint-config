@@ -1,4 +1,4 @@
-import { TypedFlatConfigItem } from 'src/types'
+import type { TypedFlatConfigItem } from 'src/types'
 import pluginStylistic from '@stylistic/eslint-plugin'
 
 export async function stylistic(): Promise<TypedFlatConfigItem[]> {
@@ -18,8 +18,7 @@ export async function stylistic(): Promise<TypedFlatConfigItem[]> {
       rules: {
         ...config.rules,
 
-        'object-curly-newline': 'warn',
-        'array-bracket-newline': 'warn',
+        '@stylistic/object-curly-newline': 'warn',
       },
     },
   ]

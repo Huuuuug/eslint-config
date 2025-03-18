@@ -1,6 +1,7 @@
 import { FlatConfigComposer } from 'eslint-flat-config-utils'
 
 import { javascript, typescript, stylistic, ignores } from './configs'
+import { getOverrides } from './utils'
 
 import type { Linter } from 'eslint'
 import type {
@@ -27,7 +28,9 @@ export function ganghu(
   configs.push(ignores(options.ignores), stylistic(), javascript())
 
   if (enableTypescript) {
-    configs.push(typescript())
+    configs.push(typescript({
+      overrides: getOverrides(options, 'typescript'),
+    }))
   }
 
   const composer = new FlatConfigComposer<TypedFlatConfigItem, ConfigNames>()

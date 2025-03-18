@@ -1,7 +1,7 @@
 import type { Linter } from 'eslint'
 import type { Rules, ConfigNames } from './typegen'
-import { FlatGitignoreOptions } from 'eslint-config-flat-gitignore'
-import { ParserOptions } from '@typescript-eslint/parser'
+import type { FlatGitignoreOptions } from 'eslint-config-flat-gitignore'
+import type { ParserOptions } from '@typescript-eslint/parser'
 
 export type Awaitable<T> = T | Promise<T>
 
@@ -100,6 +100,21 @@ export interface OptionsConfig
   gitignore?: boolean | FlatGitignoreOptions
 
   typescript?: boolean | OptionsTypescript
+
+  javascript?: boolean | OptionsOverrides
+
+  /**
+   * Override the `files` option to provide custom globs.
+   */
+
+  /**
+   * Provide overrides for rules for each integration.
+   *
+   */
+  overrides?: {
+    typescript?: TypedFlatConfigItem['rules']
+    javascript?: TypedFlatConfigItem['rules']
+  }
 }
 
 export interface OptionsIsInEditor {

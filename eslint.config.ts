@@ -1,7 +1,11 @@
 import { ganghu } from './src'
 
 export default ganghu(
-  { typescript: true },
+  { typescript: true, overrides: {
+    typescript: {
+      'no-console': 'warn',
+    },
+  } },
   {
     ignores: ['node_modules', 'dist', 'src/typegen.ts'],
   },
