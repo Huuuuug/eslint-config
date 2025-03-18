@@ -8,13 +8,19 @@ export async function stylistic(): Promise<TypedFlatConfigItem[]> {
     semi: false,
     pluginName: '@stylistic',
   })
-  return [{
-    name: 'ganghu/stylistic/rules',
-    plugins: {
-      '@stylistic': pluginStylistic,
+
+  return [
+    {
+      name: 'ganghu/stylistic/rules',
+      plugins: {
+        '@stylistic': pluginStylistic,
+      },
+      rules: {
+        ...config.rules,
+
+        'object-curly-newline': 'warn',
+        'array-bracket-newline': 'warn',
+      },
     },
-    rules: {
-      ...config.rules,
-    },
-  }]
+  ]
 }

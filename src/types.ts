@@ -7,10 +7,6 @@ export type Awaitable<T> = T | Promise<T>
 
 export type { Rules, ConfigNames }
 
-export type OptionsTypescript =
-  | (OptionsTypescriptWithTypes & OptionsOverrides)
-  | (OptionsTypescriptParserOptions & OptionsOverrides)
-
 export type TypedFlatConfigItem = Omit<
   Linter.Config<Linter.RulesRecord & Rules>,
   'plugins'
@@ -86,9 +82,9 @@ export interface OptionsTypescriptParserOptions {
   ignoresTypeAware?: string[]
 }
 
-export interface OptionsOverrides {
-  overrides?: TypedFlatConfigItem['rules']
-}
+export type OptionsTypescript =
+  | (OptionsTypescriptWithTypes & OptionsOverrides)
+  | (OptionsTypescriptParserOptions & OptionsOverrides)
 
 export interface OptionsConfig
   extends OptionsComponentExts,
