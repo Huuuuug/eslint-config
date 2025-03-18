@@ -9,7 +9,7 @@ export async function stylistic(): Promise<TypedFlatConfigItem[]> {
     pluginName: '@stylistic',
   })
   return [{
-    name: 'huuuuug/stylistic/rules',
+    name: 'ganghu/stylistic/rules',
     plugins: {
       '@stylistic': pluginStylistic,
     },

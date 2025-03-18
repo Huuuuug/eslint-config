@@ -21,7 +21,7 @@ export async function typescript(
 
   return [
     {
-      name: 'huuuuug/typescript/setup',
+      name: 'ganghu/typescript/setup',
       languageOptions: {
         parser: tsEslintParser,
         parserOptions: {
@@ -34,7 +34,7 @@ export async function typescript(
     },
     {
       files,
-      name: 'huuuuug/typescript/rules',
+      name: 'ganghu/typescript/rules',
       rules: {
         ...tsEslintPlugin.configs['recommended'].rules,
         ...tsEslintPlugin.configs['strict'].rules,

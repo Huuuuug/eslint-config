@@ -5,7 +5,7 @@ import { GLOB_EXClUDE } from '../globs'
 export async function ignores(userIgnores: string[] = []): Promise<TypedFlatConfigItem[]> {
   return [
     {
-      name: 'huuuuug/ignores',
+      name: 'ganghu/ignores',
       ignores: [
         ...GLOB_EXClUDE,
         ...userIgnores,

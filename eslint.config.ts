@@ -1,6 +1,6 @@
-import { huuuuug } from './src'
+import { ganghu } from './src'
 
-export default huuuuug(
+export default ganghu(
   { typescript: true },
   {
     ignores: ['node_modules', 'dist', 'src/typegen.ts'],

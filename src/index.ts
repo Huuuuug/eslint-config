@@ -1,6 +1,6 @@
-import { huuuuug } from './factory'
+import { ganghu } from './factory'
 
 export * from './factory'
 export * from './configs'
 
-export default huuuuug
+export default ganghu

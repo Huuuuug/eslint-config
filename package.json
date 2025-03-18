@@ -1,8 +1,8 @@
 {
-  "name": "@huuuuug/eslint-config",
+  "name": "@ganghu/eslint-config",
   "version": "1.0.0",
   "packageManager": "pnpm@9.15.1",
-  "description": "ESLint config for huuuuug",
+  "description": "ESLint config for ganghu",
   "type": "module",
   "license": "MIT",
   "main": "./dist/index.js",

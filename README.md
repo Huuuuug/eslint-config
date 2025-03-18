@@ -1,1 +1,1 @@
-# @huuuuug/eslint-config
+# @ganghu/eslint-config

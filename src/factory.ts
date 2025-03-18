@@ -10,7 +10,7 @@ import type {
   TypedFlatConfigItem,
 } from './types'
 
-export function huuuuug(
+export function ganghu(
   options: OptionsConfig & Omit<TypedFlatConfigItem, 'files'> = {},
   ...userConfigs: Awaitable<
     | TypedFlatConfigItem
