@@ -2,6 +2,7 @@ import type { Linter } from 'eslint'
 import type { Rules, ConfigNames } from './typegen'
 import type { FlatGitignoreOptions } from 'eslint-config-flat-gitignore'
 import type { ParserOptions } from '@typescript-eslint/parser'
+import { StylisticCustomizeOptions } from '@stylistic/eslint-plugin'
 
 export type Awaitable<T> = T | Promise<T>
 
@@ -103,6 +104,12 @@ export interface OptionsConfig
 
   javascript?: boolean | OptionsOverrides
 
+  vue?: boolean | OptionsOverrides
+
+  /**
+   * Additional rules to enable.
+   */
+
   /**
    * Override the `files` option to provide custom globs.
    */
@@ -114,9 +121,20 @@ export interface OptionsConfig
   overrides?: {
     typescript?: TypedFlatConfigItem['rules']
     javascript?: TypedFlatConfigItem['rules']
+    vue?: TypedFlatConfigItem['rules']
   }
 }
 
 export interface OptionsIsInEditor {
   isInEditor?: boolean
 }
+
+export interface OptionsHasTypeScript {
+ typeScript?: boolean
+}
+
+export interface OptionsStylistic {
+  stylistic?: boolean | StylisticConfig
+}
+
+export interface StylisticConfig extends Pick<StylisticCustomizeOptions, 'indent' | 'quotes' | 'jsx' | 'semi'>{}

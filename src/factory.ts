@@ -1,6 +1,6 @@
 import { FlatConfigComposer } from 'eslint-flat-config-utils'
 
-import { javascript, typescript, stylistic, ignores } from './configs'
+import { javascript, typescript, vue, stylistic, ignores } from './configs'
 import { getOverrides } from './utils'
 
 import type { Linter } from 'eslint'
@@ -20,7 +20,7 @@ export function ganghu(
     | Linter.Config[]
   >[]
 ): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
-  const { typescript: enableTypescript } = options
+  const { typescript: enableTypescript, vue: enableVue } = options
 
   // Base Configs
   const configs: Awaitable<TypedFlatConfigItem[]>[] = []
@@ -30,6 +30,12 @@ export function ganghu(
   if (enableTypescript) {
     configs.push(typescript({
       overrides: getOverrides(options, 'typescript'),
+    }))
+  }
+
+  if (enableVue) {
+    configs.push(vue({
+      overrides: getOverrides(options, 'vue'),
     }))
   }
 
