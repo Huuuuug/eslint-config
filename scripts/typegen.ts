@@ -1,21 +1,25 @@
 import { writeFile } from 'node:fs/promises'
 import { flatConfigsToRulesDTS } from 'eslint-typegen/core'
 import { builtinRules } from 'eslint/use-at-your-own-risk'
-import { presetAll } from '../src/presets'
 
-const configs = [
-  ...(await presetAll()),
+import { combine, javascript, typescript, vue, stylistic } from '../src'
+
+const configs = await combine(
   {
-    plugins: { '': { rules: Object.fromEntries(builtinRules) } },
+    plugins: { '': { rules: Object.fromEntries(builtinRules.entries()) } },
   },
-]
+  javascript(),
+  typescript(),
+  vue(),
+  stylistic(),
+)
+
+const configNames = configs.map(i => i.name).filter(Boolean) as string[]
 
 let dts = await flatConfigsToRulesDTS(configs, {
   includeAugmentation: false,
   exportTypeName: 'Rules',
 })
-
-const configNames = configs.map(i => i.name).filter(Boolean) as string[]
 
 dts += `
 // Names of all configs

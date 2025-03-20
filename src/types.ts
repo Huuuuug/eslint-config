@@ -2,7 +2,7 @@ import type { Linter } from 'eslint'
 import type { Rules, ConfigNames } from './typegen'
 import type { FlatGitignoreOptions } from 'eslint-config-flat-gitignore'
 import type { ParserOptions } from '@typescript-eslint/parser'
-import { StylisticCustomizeOptions } from '@stylistic/eslint-plugin'
+import type { StylisticCustomizeOptions } from '@stylistic/eslint-plugin'
 
 export type Awaitable<T> = T | Promise<T>
 
@@ -130,11 +130,11 @@ export interface OptionsIsInEditor {
 }
 
 export interface OptionsHasTypeScript {
- typeScript?: boolean
+  typeScript?: boolean
 }
 
 export interface OptionsStylistic {
   stylistic?: boolean | StylisticConfig
 }
 
-export interface StylisticConfig extends Pick<StylisticCustomizeOptions, 'indent' | 'quotes' | 'jsx' | 'semi'>{}
+export interface StylisticConfig extends Pick<StylisticCustomizeOptions, 'indent' | 'quotes' | 'jsx' | 'semi'> {}
