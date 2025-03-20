@@ -1,17 +1,35 @@
 {
   "name": "@ganghu/eslint-config",
+  "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@9.15.1",
   "description": "ESLint config for ganghu",
-  "type": "module",
+  "author": "Gang hu (https://github.com/Huuuuug)",
   "license": "MIT",
+  "homepage": "https://github.com/Huuuuug/eslint-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Huuuuug/eslint-config.git"
+  },
+  "keywords": [
+    "eslint-config"
+  ],
   "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "lint": "eslint",
     "lint:lint-staged": "lint-staged",
     "lint:fix": "eslint --fix",
     "build:typegen": "tsx scripts/typegen.ts",
-    "prepare": "simple-git-hooks"
+    "prepare": "simple-git-hooks",
+    "build": "tsup",
+    "release": "pnpm publish"
   },
   "peerDependencies": {
     "eslint": "catalog:peer"
@@ -32,6 +50,7 @@
     "husky": "^9.1.7",
     "jiti": "^2.4.2",
     "lint-staged": "^15.5.0",
+    "tsup": "^8.4.0",
     "tsx": "catalog:dev",
     "typescript": "^5.8.2"
   },
