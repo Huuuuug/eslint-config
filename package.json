@@ -29,7 +29,7 @@
     "build:typegen": "tsx scripts/typegen.ts",
     "prepare": "husky",
     "build": "tsup",
-    "release": "pnpm publish"
+    "release": "pnpm publish --access public"
   },
   "peerDependencies": {
     "eslint": "catalog:peer"
