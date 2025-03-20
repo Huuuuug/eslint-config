@@ -99,20 +99,30 @@ export interface OptionsConfig
    * @default true
    */
   gitignore?: boolean | FlatGitignoreOptions
-
+  /**
+ * Enable TypeScript support.
+ *
+ * Passing an object to configure the TypeScript options.
+ *
+ * @default false
+ */
   typescript?: boolean | OptionsTypescript
 
   javascript?: boolean | OptionsOverrides
 
+  /**
+   * Enable Vue support.
+   *
+   * default false
+   */
   vue?: boolean | OptionsOverrides
 
   /**
-   * Additional rules to enable.
+   * Enable JSONC support.
+   *
+   * @default true
    */
-
-  /**
-   * Override the `files` option to provide custom globs.
-   */
+  jsonc?: boolean | OptionsOverrides
 
   /**
    * Provide overrides for rules for each integration.
@@ -122,6 +132,7 @@ export interface OptionsConfig
     typescript?: TypedFlatConfigItem['rules']
     javascript?: TypedFlatConfigItem['rules']
     vue?: TypedFlatConfigItem['rules']
+    jsonc?: TypedFlatConfigItem['rules']
   }
 }
 
