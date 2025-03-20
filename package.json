@@ -8,8 +8,10 @@
   "main": "./dist/index.js",
   "scripts": {
     "lint": "eslint",
+    "lint:lint-staged": "lint-staged",
     "lint:fix": "eslint --fix",
-    "build:typegen": "tsx scripts/typegen.ts"
+    "build:typegen": "tsx scripts/typegen.ts",
+    "prepare": "simple-git-hooks"
   },
   "peerDependencies": {
     "eslint": "catalog:peer"
@@ -27,8 +29,16 @@
   "devDependencies": {
     "@types/node": "catalog:dev",
     "eslint-typegen": "catalog:dev",
+    "husky": "^9.1.7",
     "jiti": "^2.4.2",
+    "lint-staged": "^15.5.0",
     "tsx": "catalog:dev",
     "typescript": "^5.8.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
