@@ -125,6 +125,18 @@ export interface OptionsConfig
   jsonc?: boolean | OptionsOverrides
 
   /**
+   * Enable JSONC imports.
+   *
+   * @default true
+   */
+  imports?: boolean | OptionsOverrides
+
+  /**
+   * Provide custom rules to extend the base config.
+   *
+   * @example
+
+  /**
    * Provide overrides for rules for each integration.
    *
    */
@@ -133,6 +145,7 @@ export interface OptionsConfig
     javascript?: TypedFlatConfigItem['rules']
     vue?: TypedFlatConfigItem['rules']
     jsonc?: TypedFlatConfigItem['rules']
+    imports?: TypedFlatConfigItem['rules']
   }
 }
 
