@@ -1,7 +1,7 @@
 {
   "name": "@ganghu/eslint-config",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "packageManager": "pnpm@9.15.1",
   "description": "ESLint config for ganghu",
   "author": "Gang hu (https://github.com/Huuuuug)",
