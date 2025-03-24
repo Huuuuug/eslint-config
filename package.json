@@ -1,8 +1,8 @@
 {
   "name": "@ganghu/eslint-config",
   "type": "module",
-  "version": "1.0.2",
-  "packageManager": "pnpm@9.15.1",
+  "version": "1.0.3",
+  "packageManager": "pnpm@10.6.5",
   "description": "ESLint config for ganghu",
   "author": "Gang hu (https://github.com/Huuuuug)",
   "license": "MIT",
@@ -29,7 +29,7 @@
     "build:typegen": "tsx scripts/typegen.ts",
     "prepare": "husky",
     "build": "tsup",
-    "release": "pnpm publish --access public"
+    "release": "pnpm build & pnpm publish --access public"
   },
   "peerDependencies": {
     "eslint": "catalog:peer"
